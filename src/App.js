@@ -1,25 +1,65 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from 'react';
+import TodoList from './components/TodoList';
+import initialTodo from './components/TodoList/todos.json';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component{
+
+  state = {
+    todos: initialTodo,
+  };
+
+  deleteTodo = todoId => {
+    this.setState(prevState => ({
+      todos: prevState.todos.filter(todo => todo.id !== todoId),
+    }));
+  };
+
+  toggleCompleted = todoId => {
+    this.setState(prevState => ({
+      todos: prevState.todos.map(todo => {
+        if (todo.id === todoId) {
+          return {
+            ...todo,
+            completed: !todo.completed
+          };
+        }
+        return todo;
+      }),
+    }));
+}
+
+  render() {
+    const { todos } = this.state;
+
+    // const totalTodoCount = todos.length;
+    const completedTodos = todos.reduce((total, todo) => (todo.completed ? total + 1 : total), 0,);
+    // console.log(completedTodos);
+
+    return (
+      <>
+        <div>
+          <p>Total: { todos.length}</p>
+          <p>Marked as done: {completedTodos}</p>
+        </div>
+        <TodoList todos={todos} onDeleteTodo={this.deleteTodo}/>
+      </>
+    );
+  }
 }
 
 export default App;
+
+
+
+
+
+
+// const App = () => (
+//   <>
+//     <TodoList />
+//   </>
+// );
+  
+
+// export default App;
