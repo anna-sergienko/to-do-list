@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/anna-sergienko/to-do-list.git/static/css/main.073c9b0a.css",
+    "main.js": "/anna-sergienko/to-do-list.git/static/js/main.5b547937.js",
+    "static/js/787.34d05ddd.chunk.js": "/anna-sergienko/to-do-list.git/static/js/787.34d05ddd.chunk.js",
+    "static/media/logo.svg": "/anna-sergienko/to-do-list.git/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/anna-sergienko/to-do-list.git/index.html",
+    "main.073c9b0a.css.map": "/anna-sergienko/to-do-list.git/static/css/main.073c9b0a.css.map",
+    "main.5b547937.js.map": "/anna-sergienko/to-do-list.git/static/js/main.5b547937.js.map",
+    "787.34d05ddd.chunk.js.map": "/anna-sergienko/to-do-list.git/static/js/787.34d05ddd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.5b547937.js"
+  ]
+}
